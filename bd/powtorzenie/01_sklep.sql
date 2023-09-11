@@ -105,7 +105,6 @@ INSERT INTO produkty
 (nazwa, cena, producent)
 VALUES
 ('Loudspeakers', 70, 2);
-
 -- 18. Zmień nazwę produktu o kodzie 8 na "Laser Printer".
 UPDATE produkty
 SET nazwa='Laser Printer'

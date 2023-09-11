@@ -1,0 +1,7 @@
+ul{
+    list-style-type: none;
+}
+
+input[name='grupa']{
+    size:300%;
+}

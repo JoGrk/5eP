@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupa opcji</title>
+    <link rel="stylesheet" href="03_opcje.css">
+    <script src="03_opcje.js" defer></script>
+</head>
+<body>
+    
+    <form>
+        <p>Płeć</p>
+        <ul>
+            <li>
+                <label >
+                    <input name="plec" value="kobieta" type="radio" checked id="kobieta">
+                    kobieta
+                </label> 
+            </li>
+            <li>
+                <label>
+                    <input name="plec" value="mezczyzna" type="radio" id="mezczyzna">
+                    mężczyzna
+                </label>
+            </li>
+
+        </ul>
+        <p>grupa</p>
+        <ul>
+            <li>
+                <input type="radio" id="pierwsza" name="grupa" value="grupa1" checked>
+                <label for="pierwsza">pierwsza</label>
+            </li>
+            <li>
+                <input type="radio" id="druga" name="grupa" value="grupa2" checked>
+                <label for="pierwsza">druga</label>
+            </li><li>
+                <input type="radio" id="trzecia" name="grupa" value="grupa3" checked>
+                <label for="pierwsza">trzecia</label>
+            </li>
+
+        </ul>
+        <button>Wyślij</button>
+    </form>
+
+    <div id="wynik"></div>
+    
+</body>
+</html>

@@ -101,10 +101,20 @@ WHERE cena = (  SELECT MAX(cena)
 ;
 
 -- 17. Dodaj nowy produkt:  Loudspeakers, $70, producent 2.
+INSERT INTO produkty
+(nazwa, cena, producent)
+VALUES
+('Loudspeakers', 70, 2);
 
 -- 18. Zmień nazwę produktu o kodzie 8 na "Laser Printer".
-
+UPDATE produkty
+SET nazwa='Laser Printer'
+WHERE kod=8;
 -- 19. Wykonaj 10% przecenę każdego produktu 
-
+UPDATE produkty
+SET cena=cena*0.9;
 -- 20. Wykonaj 10% przecenę każdego produktu o cenie większej lub równiej $120.
-
+UPDATE produkty
+SET cena=cena*0.9
+WHERE cena>=120;
+ 

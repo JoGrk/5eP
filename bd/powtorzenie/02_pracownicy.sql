@@ -103,13 +103,28 @@ INSERT INTO dzialy
 VALUES
 (10,"Quality Assurance",40000);
 -- 17. Dodaj pracownika "Mary Moore", pracującą w dziale o kodzie 10, z ID 847-21-9811.
+INSERT INTO pracownicy
+VALUES
+('847-21-9811','Mary', 'Moore','10');
 
 -- 18. Zmniejsz budżet wszystkich działów o 10%.
-
+UPDATE dzialy
+SET budzet = budzet*0.9;
 -- 19. przenieś pracowników z działu Research  do działu IT  .
+
+UPDATE pracownicy
+SET dzial = (SELECT kod FROM dzialy WHERE nazwa='IT') 
+WHERE dzial = (SELECT kod FROM dzialy WHERE nazwa='Research');
 
 -- 20. Usuń wszystkich pracowników pracujących w dziale   IT.
 
+DELETE FROM pracownicy
+WHERE dzial = (SELECT kod FROM dzialy WHERE nazwa='IT');
+
 -- 21. Usuń wszystkich pracowników, którzy pracują w działach z budżetem większym bądź równym $60,000 (60 tysięcy)
 
+DELETE FROM Pracownicy
+WHERE dzial IN (SELECT kod FROM dzialy WHERE budzet >= 60000);
+
 -- 22. Usuń wszystkich pracowników
+DELETE FROM pracownicy;

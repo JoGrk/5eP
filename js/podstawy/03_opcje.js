@@ -3,6 +3,7 @@ const kobietaE = document.querySelector('#kobieta');
 const buttonE = document.querySelector('button');
 const wynikE = document.querySelector('#wynik');
 
+
 buttonE.addEventListener('click',(event)=>{
     event.preventDefault();
     console.log(kobietaE)
@@ -18,5 +19,7 @@ buttonE.addEventListener('click',(event)=>{
     else{
         wynikE.textContent=mezczyznaE.value
     }
+
+    wynikE.innerHTML+='<br>'+document.querySelector('input[name="grupa"]:checked').value
     
 })

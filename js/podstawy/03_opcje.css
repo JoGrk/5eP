@@ -5,3 +5,6 @@ ul{
 input[name='grupa']{
     margin:20px;
 }
+input[name='grupa']:checked{
+    margin-right: 100px;
+}

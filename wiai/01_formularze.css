@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(30, 30, 30);
+    font-family: Roboto, sans-serif;
+}
+form{
+    width: 30rem;
+    margin: 3rem auto;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 6px;
+}
+label{
+    margin-bottom: 0.5rem;
+    display: block;
+}
+input{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    padding: 0.25rem;
+    font-family: inherit;
+    font-size: inherit;
+    color: rgb(193, 6, 193);
+    border: 1px solid rgba(191, 137, 191, 0.985);
+
+}
+
+input:focus{
+background-color:rgba(246, 219, 246, 0.985); ;
+}

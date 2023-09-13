@@ -36,15 +36,21 @@ VALUES
 
 
 //dodanie użytkowników
-//2.
+//2. ważniak, śpioch, doktorek
 
 CREATE USER 'Wazniak'
 IDENTIFIED BY '1234';
 
+CREATE USER 'Spioch'
+IDENTIFIED BY '1234';
+
+CREATE USER 'Doktorek'
+IDENTIFIED BY '1234';
 // nadawanie uprawnień
 //3 daj ważnikaowi prawa do wykonywania polecenia select w tabeli obowiązki domowe
-
+GRANT SELECT ON lesny.obowiazki_domowe TO 'Wazniak';
 // 4.A daj śpiochowi prawo do usuwania magicznych zwierząt
+GRANT DELETE ON lesny.magiczne_zwierzeta TO 'Spioch';
 
 // 4.B jesli trzeba popraw uprawnienia śpiocha 
 
@@ -52,4 +58,4 @@ IDENTIFIED BY '1234';
 
 // 6. daj prawo doktorkowi do przeglądania wszystkich tabel w bazie
 
-//7. daj prawo ... do dodwania nowych magicznych zwierząt dla Doktorka
+//7. daj prawo do dodwania nowych magicznych zwierząt dla Doktorka

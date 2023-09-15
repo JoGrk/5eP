@@ -10,7 +10,7 @@ CREATE TABLE magiczne_zwierzeta
     tanczy char
 );
 
-CREATE TABLE obowiazki_domowe
+CREATE TABLE obowiazki
 (
     id_obowiazku INT AUTO_INCREMENT PRIMARY KEY,
     nazwa varchar(255),
@@ -26,7 +26,7 @@ VALUES
 ('jelen', 'N', 'N'),
 ('wiewiorka', 'T', 'T');
 
-INSERT INTO obowiazki_domowe
+INSERT INTO obowiazki
 (nazwa, czas, lokalizacja)
 VALUES
 ('mycie', '21:30', 'kuchnia'),
@@ -51,11 +51,24 @@ IDENTIFIED BY '1234';
 GRANT SELECT ON lesny.obowiazki_domowe TO 'Wazniak';
 // 4.A daj śpiochowi prawo do usuwania magicznych zwierząt
 GRANT DELETE ON lesny.magiczne_zwierzeta TO 'Spioch';
-
+// - sprawdź usuwając jelenia ('jelen')
+DELETE from magiczne
+     where typ='jelen';
 // 4.B jesli trzeba popraw uprawnienia śpiocha 
-
+GRANT SELECT ON magiczne TO 'Spioch';
 // 5. wszystkim uzytkownikom wszystkie prawa do obowiązków domowych
 
+CREATE USER 'Wazniak'
+IDENTIFIED BY '1234';
+GRANT ALL ON lesny.obowiazki TO 'Wazniak', 'Doktorek', 'Spioch';
+GRANT ALL ON lesny.obowiazki TO 'Spioch'; 
 // 6. daj prawo doktorkowi do przeglądania wszystkich tabel w bazie
+CREATE USER 'Doktorek'
+IDENTIFIED BY '1234';
+GRANT SELECT ON lesny.* TO 'Doktorek';
+
+
 
 //7. daj prawo do dodwania nowych magicznych zwierząt dla Doktorka
+
+GRANT INSERT ON lesny.magiczne TO 'Doktorek';

@@ -102,6 +102,7 @@ FROM Magazyny
 WHERE Pojemnosc < (SELECT COUNT(kontenery.kod)
                     FROM kontenery
                     WHERE magazyn = magazyny.kod);
+                    
 -- 11. Wyświetl kody wszystkich kontenerów zlokalizowanych w Chicago wraz z lokalizacją i pojemnością magazynów . Uwzględnij w zestawieniu także te magazyny z Chicago, w których nie ma aktualnie kontenerów  (zrzut)
 SELECT kontenery.kod, lokalizacja, Pojemnosc
 FROM kontenery RIGHT JOIN magazyny ON kontenery.magazyn = magazyny.kod 

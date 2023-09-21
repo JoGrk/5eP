@@ -53,28 +53,56 @@ CREATE TABLE Kina(
 
  
 
- 
-
 -- 1. Wyświetl tytuły wszystkich filmów
+SELECT Tytul
+from filmy;
 
 -- 2. Ile różnych poziomów ratingu jest zapisane w bazie? Wyświetl je (dane nie powinny się powtarzać). 
+SELECT DISTINCT rating
+from filmy;
 
 -- 3. Wyświetl wszystkie filmy z nieustalonym ratingiem.
-
+SELECT tytul 
+FROM filmy 
+WHERE rating IS NULL;
 -- 4. Wyświetl wszystkie  kina, w których aktualnie nie są wyświetlane żadne filmy. 
+SELECT film, nazwa from kina
+WHERE film is NULL;
 
 -- 5. Wyświetl wszystkie dane o kinach i filmach, uwzględnij tylko dane o filmach, które są wyświetlane w tych kinach i dane o kinach, w których są wyświetlane jakieś filmy. 
-
+SELECT *
+FROM Kina
+INNER JOIN Filmy ON Filmy.kod=Kina.film;
 -- 6. Wyświetl wszystkie dane o kinach i filmach, uwzględnij w zestawieniu także te kina, w których aktualnie nie są wyświetlane żadne filmy.
+
+SELECT *
+FROM kina
+LEFT JOIN Filmy ON Filmy.kod=Kina.film;
 
 -- 7. Wyświetl wszystkie dane o kinach i filmach, uwzględnij w zestawieniu także te filmy, które nie są aktualnie wyświetlane w żadnych kinach. 
 
+SELECT *
+FROM kina
+RIGHT JOIN Filmy ON Filmy.kod=Kina.film;
+
 -- 8. Wyświetl wszystkie dane o kinach i filmach, uwzględnij w zestawieniu także te kina, w których aktualnie nie są wyświetlane żadne filmy oraz  te filmy, które nie są aktualnie wyświetlane w żadnych kinach. 
 
+SELECT *
+FROM kina
+LEFT JOIN Filmy ON Filmy.kod=Kina.film
+UNION 
+SELECT *
+FROM kina
+RIGHT JOIN Filmy ON Filmy.kod=Kina.film;
+
 -- 9. Dodaj film  "One, Two, Three" (bez ratingu)
- 
+ INSERT INTO Filmy(tytul)
+ VALUES('One, Two, Three');
 -- 10. Ustal rating wszystkich filmów bez ratingu na  "G".
-
+UPDATE filmy
+SET rating="G"
+WHERE rating is NULL;
 -- 11. usuń kina wyświetlające filmy z ratingiem "NC-17".
-
+DELETE FROM Kina 
+WHERE film IN (SELECT kod FROM Filmy WHERE rating='NC-17');
  

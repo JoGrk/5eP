@@ -22,21 +22,23 @@
                 <option value="Plum">Plum</option>
             </select>
             <p>Podaj rozmiar czcionki w procentach, np. 200%</p>
-            <input type="number" value="100">
+            <input type="number" value="100" id="size">
             <p>Czy rysunek ma mieć ramkę?</p>
             <input type="checkbox" id="border" checked>
             <label for="border">rysuj ramkę</label>
             <p>Jakie jest typ punktora listy?</p>
-            <input type="radio" name="bullet" id="disc"  value="disc" checked>
-            <label for="disc">Dysk</label><br>
-            <input type="radio" name="bullet" id="square" value="square">
-            <label for="square">kwadrat</label><br>
-            <input type="radio" name="bullet" id="circle" value="circle">
-            <label for="circle">okrąg</label><br>
+            <div id="radio_div">
+                <input type="radio" name="bullet" id="disc"  value="disc" checked>
+                <label for="disc">Dysk</label><br>
+                <input type="radio" name="bullet" id="square" value="square">
+                <label for="square">kwadrat</label><br>
+                <input type="radio" name="bullet" id="circle" value="circle">
+                <label for="circle">okrąg</label><br>
+            </div>
         </section>
         <section id="right">
             <div class="img-text">
-                <img src="gibraltar.jpg" alt="Półwysep Giblartar">
+                <img src="gibraltar.jpg" alt="Półwysep Giblartar" id="picture">
                 <ul>
                     <li>element1</li>
                     <li>element2</li>

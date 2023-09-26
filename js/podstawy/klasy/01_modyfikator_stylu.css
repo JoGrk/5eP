@@ -1,0 +1,30 @@
+body{
+    
+}
+ul{
+    list-style: none;
+}
+.flex-container{
+    display: flex;
+}
+#left{
+    width: 50%;
+}
+#right{
+    width: 70%;    
+}
+.font-courier{
+    font-family: 'Courier New', Courier, monospace;
+}
+.blue{
+    color: blue;
+    background-color: lightblue;
+}
+.green{
+    color: green;
+    background-color: lightgreen;
+}
+.red{
+    color: red;
+    background-color: pink;
+}

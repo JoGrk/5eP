@@ -81,16 +81,22 @@ SELECT * FROM test;
 -- E. Może dodać dane (liczbę 5)
 INSERT INTO test 
 VALUES (5);
+
 -- 14. Utwórz użytkownika serwisant
+CREATE USER 'serwisant'@'localhost' 
+IDENTIFIED BY '1234';
  
 -- 15. Daj prawo serwisantowi do usuwania danych z tabeli test w bazie egzaminy (samo usuwanie, bez prawa do wyszukiwania).
- 
+ GRANT DELETE ON Egzaminy.test TO 'serwisant'@'localhost';
 -- 16. Sprawdź, czy serwisant (prawo do usuwania danych):
 -- A. widzi bazę Egzaminy
 -- B. Może jej użyć
 -- C. Widzi tabele w tej bazie
 -- D. Może wyświetlić zawartość tabeli Test
 -- E. Może usunąć dane (liczbę 3)
+    DELETE FROM test 
+    WHERE id=3;
 -- F. Może usunąć wszystkie dane;
+    DELETE FROM test
 -- 17. Jeśli użytkownik serwisant ma problemy z usuwaniem, popraw to (ale nie dawaj mu za dużo praw, a już na pewno nie wszystkie), najpierw dodaj do tabeli liczby 1,2,3
- 
+ GRANT SELECT ON Egzaminy.test TO 'serwisant'@'localhost';

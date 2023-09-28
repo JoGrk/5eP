@@ -1,0 +1,23 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;400&display=swap');
+
+
+body{
+    background-color: rgb(139, 81, 10);
+    font-family: Kanit;
+}
+form{
+    background-color: rgb(232, 207, 177) ;
+    margin: 3rem auto;
+    width: 20rem;
+    border-radius: 0.25rem;
+    box-shadow: 5px 5px 10px;
+    padding: 1rem;
+    
+}
+input{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: inherit;
+}

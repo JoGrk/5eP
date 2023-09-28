@@ -32,18 +32,35 @@ GRANT UPDATE,INSERT,DELETE ON Komis.operacje TO "Jan";
 GRANT UPDATE,INSERT,DELETE ON Komis.rejestry TO "Jan";
 GRANT SELECT ON Komis.* TO "Jan";
 -- C. Kasjer - prawa do przeszukiwania perspektywy KlienciKoszty
- 
+ GRANT SELECT ON Komis.KlienciKoszty TO "Kasjer";
 -- 4. Utwórz nowego użytkownika uczendba z hasłem dostępu zaq1@WSX 
+CREATE USER 'uczendba'@'localhost'
+IDENTIFIED BY '1234';
 -- A. przypisz mu wszystkie uprawnienia do tabel Klienci i Handlowcy.
+GRANT ALL ON Komis.Klienci TO 'uczendba';
+GRANT ALL ON Komis.Handlowcy TO 'uczendba';
 -- B. zabroń mu usuwania rekordów z tabeli Klienci 
+    REVOKE DELETE ON Komis.Klienci FROM 'uczendba';
 -- C. odbierz uprawnienia wykonywania zapytań usuwania rekordów i modyfikowania wartości w tabeli Handlowcy
+REVOKE DELETE,UPDATE ON komis.handlowcy FROM 'uczendba';
 
 -- 5. Utwórz użytkowników jeden i dwa (bez hasła).
+
+CREATE USER 'jeden'@'localhost';
+CREATE USER 'dwa'@'localhost';
+
 --  A. Nadaj uprawnienia wprowadzania, zmiany i usuwania danych w całej bazie komis dla użytkownika jeden
+GRANT INSERT,UPDATE,DELETE ON komis.* TO 'jeden';
 -- B. nadaj wszystkie uprawnienia do tabeli Auta użytkownikowi dwa
+GRANT ALL ON komis.auta TO 'dwa';
 -- C. odbierz użytkownikowi jeden prawa usuwania danych 
+REVOKE DELETE ON komis.* FROM 'jeden';
 -- D. odbierz wszystkie uprawnienia użytkownikowi dwa do tabeli Auta
+REVOKE ALL ON komis.auta FROM 'dwa';
 -- 6. 
 -- A. Zaloguj się jako użytkownik jeden i ustaw hasło 'zaq1@WSX'
+set password = password('1234');
 -- B. Ustaw hasło dla użytkownika dwa na 'zaq1@WSX'
+set password = password('zaq1@WSX');
 -- C. z poziomu konta root zmień hasło dla użytkownika jeden na 'haslo'
+set password for 'jeden' = password('haslo')

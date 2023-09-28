@@ -111,13 +111,25 @@ WHERE cena = (SELECT MAX(cena)
  
 
 -- 7. Dodaj Ofertę produktu o kodzie 1 dostawcy "Skellington Supplies"  o cenie 7.
-
+ INSERT INTO Oferty 
+ VALUES 
+ (1,( SELECT kod FROM dostawcy WHERE NAZWA = 'Skellington Supplies'),7);
  
 
 -- 8. Podnieś cenę wszystkich produktów o 1
+UPDATE oferty
+SET cena=cena+1;
 
 -- 9. Producent  "Susan Calvin Corp." nie będzie dostarczał już wkrętów  (bolt). Usuń właściwy wiersz z tabeli Oferty.
+DELETE FROM Oferty
+WHERE dostawca = (SELECT kod FROM dostawcy WHERE nazwa = "Susan Calvin Corp") AND produkt = (SELECT kod FROM produkty WHERE nazwa = "bolt");
 
 -- 10. Usuń z bazy dostawcę o kodzie "RBT"
-
+DELETE FROM oferty 
+WHERE dostawca='RBT';
+DELETE FROM dostawcy 
+WHERE kod='RBT';
 -- 11. Usuwamy z oferty (tabela Oferty) nakrętki (nut). Właściwy kod produktu wyszukaj podzapytaniem.
+
+DELETE FROM Oferty 
+WHERE produkt = (SELECT kod FROM produkty WHERE nazwa = 'nut');

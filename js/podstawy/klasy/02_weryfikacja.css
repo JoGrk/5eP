@@ -21,3 +21,19 @@ input{
     box-sizing: border-box;
     font-family: inherit;
 }
+input:focus{
+    background-color:rgb(255, 234, 208);
+}
+button{
+    padding: 0.25rem 1rem ;
+    
+}
+button:hover{
+    background-color:rgb(255, 234, 208) ;
+    cursor: pointer;
+}
+
+.red{
+    background-color: rgb(255, 219, 219);
+    color: rgb(255, 83, 83);
+}

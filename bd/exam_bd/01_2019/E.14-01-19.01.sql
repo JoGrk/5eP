@@ -29,3 +29,21 @@ WHERE rok = 2017 AND ocena = 6;
 -- Zapytanie 4: zmieniające dane w tabeli rezyserzy. Pole imie w rekordzie o id równym 8 ma nowe brzmienie „Francis Ford”
 
 UPDATE rezyserzy SET imie = 'Francis Ford' WHERE id = 8;
+
+-- E.14-05-19.01
+-- Zapytanie 1: wybierające jedynie pola nazwa oraz potoczna z tabeli grzyby jedynie dla grzybów jadalnych
+SELECT nazwa, potoczna 
+FROM grzyby 
+WHERE JADALNY=1;
+
+-- Zapytanie 2: wybierające jedynie pola nazwa i potoczna z tabeli grzyby oraz odpowiadające im potoczna nazwa z tabeli rodzina jedynie dla grzybów, do których przypisana jest potrawa sos
+SELECT grzyby.nazwa, potoczna, rodzina.nazwa 
+FROM grzyby 
+INNER JOIN rodzina ON rodzina.id=grzyby.rodzina_id
+INNER JOIN potrawy ON potrawy.id=grzyby.potrawy_id
+WHERE potrawy.nazwa='sos';
+-- Zapytanie 3: wybierające jedynie pola nazwa_pliku oraz potoczna z tabeli grzyby
+-- Zapytanie 4: dodające do tabeli rodzina pole opis typu tekstowego
+ALTER TABLE rodzina 
+ADD opis varchar(255);
+ 

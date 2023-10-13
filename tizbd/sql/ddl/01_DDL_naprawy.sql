@@ -28,10 +28,18 @@
 
 CREATE TABLE naprawa(
     id_naprawa int AUTO_INCREMENT PRIMARY KEY UNIQUE,
-    data_przyjecia date CHECK(data_przyjecia<="2023-10-12"),
+    data_przyjecia date CHECK(data_przyjecia<="2023-10-13"),
     opis_usterki varchar(1024) NOT NULL CHECK(LENGTH(opis_usterki)>10),
     zaliczka DEC(8,2) CHECK(zaliczka BETWEEN 100 AND 1000)
 );
+
+INSERT INTO naprawa 
+(data_przyjecia, opis_usterki, zaliczka)
+VALUES
+('2023-10-12','samochod nie samochoduje',515);
+
+
+
  
 -- 3. Utwórz tabelę wykonane_naprawy(id_pracownik, id_naprawa, data_naprawy, opis_naprawy, cena), gdzie
 -- id_pracownik – identyfikator pracownika wykonującego naprawę, klucz obcy powiązany z tabelą pracownik,
@@ -39,3 +47,16 @@ CREATE TABLE naprawa(
 -- data_naprawy – domyślna wartość daty naprawy to bieżąca data systemowa,
 -- opis_naprawy – niepusty opis informujący o sposobie naprawy,
 -- cena – cena naprawy.
+
+CREATE TABLE wykonane_naprawy(
+    id_pracownik INT,
+    id_naprawa INT,
+    data_naprawy DATE DEFAULT (curdate()),
+    opis_naprawy Varchar(255) NOT NULL,
+    cena Dec(8,2),
+    PRIMARY KEY (id_pracownik,id_naprawa), 
+    FOREIGN KEY (id_pracownik) REFERENCES pracownik(id_pracownik),
+    FOREIGN KEY (id_naprawa) REFERENCES naprawa(id_naprawa) 
+    
+);
+

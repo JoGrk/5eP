@@ -1,0 +1,59 @@
+
+header{
+    display: flex;
+}
+
+body{
+    background-color: #EEEEEE;
+}
+
+#container{
+    width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+#logo, nav, footer{
+    background-color: #C0C0C0;
+    height: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#logo{
+    width: 400px;
+}
+
+nav{
+    width: 600px;
+}
+
+#banner{
+    background-color: #DDDDDD;
+    height: 200px;
+}
+
+main{
+    margin: 200px;
+}
+
+footer{
+    text-align: right;
+}
+
+a{
+    color: #555555;
+    margin: 50px;
+    font-size: 200%;
+    text-decoration: none;
+}
+
+hr{
+    background-color: #C0C0C0;
+    width: 70%;
+    border: solid 2px;
+}
+
+table{
+    text-align: left;
+}

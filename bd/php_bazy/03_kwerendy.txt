@@ -1,0 +1,3 @@
+SELECT nazwisko,COUNT(*) AS ile_tytulow FROM autorzy INNER JOIN ksiazki ON autorzy.id=ksiazki.id_autor GROUP BY nazwisko;
+
+SELECT imie, nazwisko FROM autorzy ORDER BY nazwisko;

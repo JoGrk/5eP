@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+}
+
+main{
+    display: flex;
+}
+
+#left-container{
+    width: 70%;
+}
+
+#right-container{
+    width: 30%;
+}
+
+#top-left{
+    height: 400px;
+    background-color: red;
+}
+
+#bottom-left{
+    height: 400px;
+    background-color: aqua;
+}
+
+#top-right{
+    height: 150px;
+    background-color: blueviolet;
+}
+
+#middle-right{
+    height: 350px;
+    background-color: darkolivegreen;
+}
+
+#bottom-right{
+    height: 300px;
+    background-color: khaki;
+}
+
+footer{
+    height: 50px;
+    background-color: black;
+}

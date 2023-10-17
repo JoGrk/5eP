@@ -7,7 +7,7 @@
     <title>Usługi informatyczne</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
-    <script src="skrypt.js"></script>
+    <script src="skrypt.js" defer></script>
   </head>
   <body>
     <section id="container">
@@ -32,27 +32,27 @@
         <table>
             <tr> 
                 <td>Imię:</td>
-                <td><input type="text"></td>
+                <td><input type="text" id="name"></td>
             </tr>
             <tr> 
                 <td>Nazwisko:</td>
-                <td><input type="text"></td>
+                <td><input type="text" id="surname"></td>
             </tr>
             <tr> 
                 <td>E-mail:</td>
-                <td><input type="text"></td>
+                <td><input type="email" id="email"></td>
             </tr>
             <tr> 
                 <td>Usługa:</td>
-                <td><input type="text"></td>
+                <td><input type="text" id="service"></td>
             </tr>
             <tr>
-                <td><input type="checkbox">Zapoznałam/em się z regulaminem</td>
+                <td><input type="checkbox" id="check">Zapoznałam/em się z regulaminem</td>
             </tr>
             <tr>
                 <td></td>
                 <td>
-                    <input type="submit">
+                    <input id="send" type="submit">
                     <input type="reset">
                 </td>
             </tr>

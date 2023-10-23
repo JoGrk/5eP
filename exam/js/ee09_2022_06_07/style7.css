@@ -1,0 +1,16 @@
+body{
+    font-family: Helvetica;
+}
+
+header,footer{
+    background-color: rgb(70,130,180);
+    color: white;
+    height: 30px;
+    text-align: center;
+}
+
+main{
+    background-color: rgb(176,196,222);
+    padding: 50px;
+    text-align: center;
+}

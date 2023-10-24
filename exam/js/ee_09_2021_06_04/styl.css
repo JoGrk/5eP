@@ -1,0 +1,57 @@
+*{
+    margin: 0px;
+}
+body{
+    font-family: Garamond;
+    
+}
+.container{
+    display: flex;
+    
+}
+.left{
+    width: 25%;
+    background-color: lavender;
+}
+
+.right{
+    width: 75%;
+}
+
+#l1{
+    height: 500px;
+}
+#l2{
+    height: 300px;
+}
+
+#r1{
+    height: 150px;
+    background-color: indigo;
+    color: white;
+    font-size: 200%;
+    text-align: center;
+}
+#r2{
+    height: 650px;
+    background-color: lavender;
+    font-size: 200%;
+    text-align: center;
+}
+
+footer{
+    background-color: indigo;
+    color: white;
+    text-align: right;
+}
+ul{
+   list-style-type: square; 
+}
+img{
+    padding: 5px;
+    margin: 10px;
+}
+img:hover{
+    padding: 4px;
+    border: 1px indigo solid;
+}

@@ -7,6 +7,7 @@
     <title>Usługi Kosmetyczne</title>
 </head>
 <link rel="stylesheet" href="./styl.css">
+<script src="./skrypt.js" defer></script>
 <body>
     
     <div class="container">
@@ -38,7 +39,20 @@
             </section>
             <section id="r2">
                 <h2>Sprawdź cenę swojej wizyty</h2>
-                <input type="checkbox"  id="Piling">
+                <input type="checkbox"  id="Piling" value="45">
+                <label for="Piling">Piling</label>
+                <br>
+                <input type="checkbox"  id="Maska" value="30">
+                <label for="Maska">Maska</label>
+                <br>
+                <input type="checkbox"  id="Masaz" value="20">
+                <label for="Masaz">Masaż twarzy</label>
+                <br>
+                <input type="checkbox"  id="Regulacja" value="5">
+                <label for="Regulacja">Regulacja Brwi</label>
+                <br>
+                <button id="send">Sprawdź cenę</button>
+                <p id="result"></p>
             </section>
         </div>
 

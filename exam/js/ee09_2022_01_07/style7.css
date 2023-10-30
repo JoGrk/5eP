@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+}
+
 body{
     font-family: Helvetica;
 }
@@ -13,4 +17,35 @@ main{
     background-color: rgb(176,196,222);
     padding: 50px;
     text-align: center;
+}
+#lewy{
+    background-color: rgb(70,130,180);
+    color: white;
+    height: 300px;
+    width: 80%;
+}
+
+#prawy{
+    background-color: rgb(70,130,180);
+    color: white;
+    height: 300px;
+    width: 20%;
+}
+
+main img{
+    padding: 3px;
+    border: dashed blue 1px;
+    border-radius: 10px;
+}
+
+#lewy img{
+    height: 40%;
+    border-radius: 10px;
+}
+#lewy img:hover{
+    border: solid 1px white;
+}
+
+#flex{
+    display: flex;
 }

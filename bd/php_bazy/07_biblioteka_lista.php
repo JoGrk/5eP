@@ -30,7 +30,7 @@
     <?php
     if(isset($_POST['authorList'])){
         $id = $_POST['authorList'];
-        $sql="SELECT imie, nazwisko, tytul FROM autorzy INNER JOIN ksiazki ON autorzy.id=ksiazki.id_autorWHERE id_autor=$id;";
+        $sql="SELECT imie, nazwisko, tytul FROM autorzy INNER JOIN ksiazki ON autorzy.id=ksiazki.id_autor WHERE id_autor=$id;";
         $link = new mysqli('localhost','root','','ex_biblioteka');
         $result=$link->query($sql);
         echo "<table>";

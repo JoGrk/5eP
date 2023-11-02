@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+}
+
+.container{
+    display: flex;
+}
+
+body{
+    font-family: Helvetica;
+}
+
+#up_left,#up_right{
+    background-color: rgb(146, 184, 112);
+    text-align: center;
+    width: 50%;
+    height: 170px;
+}
+header,footer{
+    background-color: rgb(100, 61, 49);
+    color: white;
+    text-align: center;
+    height: 80px;
+    padding: 5px;
+}
+
+#left,#right{
+    background-color: rgb(146, 184, 112);
+    width: 50%;
+    height: 450px;
+}
+

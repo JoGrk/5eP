@@ -34,11 +34,15 @@
         $link = new mysqli('localhost','root','','ex_biblioteka');
         $result=$link->query($sql);
         echo "<table>";
+        echo "<tr><th>imie</th><th>nazwisko</th><th>tytuł</th></tr>";
         while($row=$result->fetch_assoc()){
-            
+            echo "<tr>";
+            foreach($row as $field){
+                echo "<td>$field</td>";
+            }
+            echo "</tr>";
         }
         echo "</table>";
-
 
         $link->close();
         

@@ -25,10 +25,22 @@ ALTER TABLE awarie ADD PRIMARY KEY(Numer_zgloszenia);
 -- 3.  Zaimportuj dane dotyczące napraw (tylko plik naprawy.txt). Dodaj klucz do tabeli. 
  ALTER TABLE naprawy_txt
     -> RENAME naprawy;
--- 4. Z poziomu wiersza poleceń zaimportuj dane z pliku kumputery2.txt do tabeli komputery
+-- 4. Z poziomu wiersza poleceń zaimportuj dane z pliku komputery2.txt do tabeli komputery
+LOAD DATA LOCAL INFILE 'C:\\xampp\\htdocs\\5eP\\tizbd\\import\\01_centrum\\komputery2.txt'
+INTO TABLE komputery
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\r\n';
 
 -- 5. Z poziomu wiersza poleceń zaimportuj dane z pliku awarie2.txt do tabeli awarie
 
--- 6. Z poziomu wiersza poleceń zaimportuj dane z pliku naprawy2.txt do tabeli naprawy
+LOAD DATA LOCAL INFILE 'C:\\xampp\\htdocs\\5eP\\tizbd\\import\\01_centrum'
+INTO TABLE awarie
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\r\n';
 
+-- 6. Z poziomu wiersza poleceń zaimportuj dane z pliku naprawy2.txt do tabeli naprawy
+LOAD DATA LOCAL INFILE 'C:\\xampp\\htdocs\\5eP\\tizbd\\import\\01_centrum\\naprawy2.txt'
+    -> INTO TABLE naprawy
+    -> FIELDS TERMINATED BY '\t'
+    -> LINES TERMINATED BY '\r\n';
 

@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+}
+main{
+    display: flex;
+    height: 100vh;
+}
+#left{
+    
+    width: 33%;
+    background-color: antiquewhite;
+    padding: 40px;
+}
+#right{
+    
+    width: 67%;
+    background-color: rgb(30, 30, 30);
+
+    display: flex;
+    flex-wrap: wrap;
+    /* gap:20px; */
+
+    padding: 20px;
+}
+
+.block{
+    width: 150px;
+    height: 80px;
+    padding: 10px 20px;
+    background-color: lightgreen;
+    text-align: center;
+    font-family: sans-serif;
+    line-height: 150%;
+    margin: 20px;
+
+}

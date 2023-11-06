@@ -14,7 +14,7 @@ $result = $link->query($sql);
 </head>
 <body>
     <form action="08_lista_wielokrotna.php" method="POST">
-    <select name="categories" multiple>
+    <select name="categories[]" multiple>
         <?php
         while($row = $result->fetch_assoc()){
             $id = $row['id'];
@@ -29,8 +29,21 @@ $result = $link->query($sql);
     </form>
     <?php
     if(isset($_POST['categories'])){
-        echo $_POST['categories'];
+        $categories = $_POST['categories'];
+        echo '<ol>';
+        foreach($categories as $value){
+            $sql = "SELECT tytul FROM ksiazki WHERE id_kategoria = $value";
+            
+            $result = $link->query($sql);
+            while($row = $result -> fetch_assoc()){
+                echo '<li>';
+                echo $row['tytul'];
+                echo '</li>';   
+            }
+        }
+        echo '</ol>';
     }
+    
     else{
         echo "nalezy wybrac kategorie";
     }

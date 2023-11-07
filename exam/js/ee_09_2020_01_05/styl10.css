@@ -29,4 +29,20 @@ header,footer{
     width: 50%;
     height: 450px;
 }
+#up_left a{
+    background-image: url('cukierki1.jpg');
+    padding-right: 30px;
+    padding-bottom: 120px;
+    font-size: 150%;
+    text-decoration: none;
+}
+table,td{
+    border: 2px green dashed;
+    margin: 30px;
+    padding: 20px;
+}
+h1{
+  letter-spacing: 20px;
+  font-size: 250%;  
+}
 

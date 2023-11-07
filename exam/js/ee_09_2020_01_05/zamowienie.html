@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styl10.css">
+    <script src="skrypt.js" defer></script>
     <title>Fabryka cukierków</title>
 </head>
 <body>
@@ -23,7 +24,17 @@
 
     <div class="container">
         <section id="left">
-            
+            Numer kształtu<br>
+            <input type="number" name="figure" id="figure">
+            <br>
+            R: <input type="number" name="R" id="R">
+            G: <input type="number" name="G" id="G">
+            B: <input type="number" name="B" id="B">
+            <button onclick="change()">Zamówienie</button>
+            <br>
+            <p id="order">Twoje zamówienie</p>
+            <button id="color">Kolor</button>
+
         </section>
         <section id="right">
             <h2>Nasza oferta</h2>

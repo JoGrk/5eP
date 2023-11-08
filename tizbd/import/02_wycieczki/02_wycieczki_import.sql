@@ -61,14 +61,53 @@ CREATE TABLE rezerwacje(
 );
 -- 5. 
 -- A. Z wiersza poleceń zaimportuj do tabeli osoby dane z pliku osoby.txt (oddzielone tabulatorem, zignoruj pierwszy wiersz zawierający nazwy pól)
+LOAD DATA LOCAL INFILE
+'C:\\xampp\\htdocs\\5eP\\tizbd\\import\\02_wycieczki\\osoby.txt'
+INTO TABLE osoby
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
+
 
 -- B. Z wiersza poleceń zaimportuj do tabeli wycieczki dane z pliku wycieczki.txt (oddzielone tabulatorem, zignoruj pierwszy wiersz zawierający nazwy pól)
+LOAD DATA LOCAL INFILE
+'C:\\xampp\\htdocs\\5eP\\tizbd\\import\\02_wycieczki\\wycieczki.txt'
+INTO TABLE wycieczki
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
+
 -- C. Z wiersza poleceń zaimportuj do tabeli rezerwacje dane z pliku rezerwacje.txt (oddzielone tabulatorem, zignoruj pierwszy wiersz zawierający nazwy pól)
- 
+ LOAD DATA LOCAL INFILE
+'C:\\xampp\\htdocs\\5eP\\tizbd\\import\\02_wycieczki\\rezerwacje.txt'
+INTO TABLE rezerwacje
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
 
 -- 6.
 
- 
+-- SELECT code, name, continent FROM country 
+-- INTO OUTFILE 'e:/country.csv' 
+-- FIELDS TERMINATED BY ',' 
+-- ENCLOSED BY '"' 
+-- LINES TERMINATED BY '\n';
 
 -- A. Z wiersza poleceń wyeksportuj dane z tabeli osoby do pliku osoby_inicjały.csv. Pola powinny być oddzielone średnikiem, teksty ujęte w cudzysłów, znak kończący linie '\n'. Pokaż na zrzucie także początek zawartości pliku. Sprawdź wygląd w systemowym notatniku i dowolnym innym programie do edycji plików tekstowych (Notepad+, Sublime, Brackets)
+
+SELECT * FROM osoby
+INTO OUTFILE 'C:\\xampp\\htdocs\\5eP\\tizbd\\import\\02_wycieczki\\osoby_5ep.csv'
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY "\n";
+
+
+
+
 -- B. Z wiersza poleceń wyeksportuj dane z tabeli wycieczki (tylko kraj, miejsce i wylot) do pliku wycieczki_inicjały.csv. Pola powinny być oddzielone średnikiem, teksty ujęte w cudzysłów, znak kończący linie '\r\n'. Pokaż na zrzucie także początek zawartości pliku. Sprawdź wygląd w systemowym notatniku i dowolnym innym programie do edycji plików tekstowych 
+SELECT kraj,miejsce,wylot FROM wycieczki
+INTO OUTFILE
+'C:\\xampp\\htdocs\\5eP\\tizbd\\import\\02_wycieczki\\wycieczki_5eP.csv'
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'

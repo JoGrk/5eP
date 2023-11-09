@@ -1,0 +1,43 @@
+*{
+    font-family: georgia;
+    margin: 0;
+}
+header{
+    display: flex;
+}
+#baner1,#baner2{
+    background-color:#3CB371;
+    color: white;
+    height: 100px;
+    width: 40%;
+}
+#baner3{
+    background-color:#3CB371;
+    height: 100px;
+    width: 20%;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+.blok{
+    background-color: #FFDAB9;
+    width: 170px;
+    height: 90px;
+    margin: 5px;
+    border: solid #3CB371 1px;
+}
+
+.blok p{
+    
+}
+footer{
+    background-color: #3CB371;
+    color: white;
+}
+h6{
+    text-align: right;
+}
+form{
+    padding: 30px;
+}

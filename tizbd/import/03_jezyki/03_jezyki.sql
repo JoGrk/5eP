@@ -74,7 +74,34 @@ CREATE TABLE uzytkownicy(
     PRIMARY KEY(panstwo,jezyk)
 );
 
+ALTER TABLE uzytkownicy
+ADD FOREIGN KEY(panstwo) references panstwa(panstwo),
+ADD FOREIGN KEY(jezyk) references jezyki(jezyk);
 -- 2. Zaimportuj dane z plików korzystając z wiersza poleceń.
+LOAD DATA LOCAL INFILE
+'C:\\xampp\\htdocs\\5eP\\tizbd\\import\\03_jezyki\\jezyki.txt'
+INTO TABLE jezyki
+FIELDS TERMINATED BY  '\t'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES;
+
+LOAD DATA LOCAL INFILE
+'C:\\xampp\\htdocs\\5eP\\tizbd\\import\\03_jezyki\\panstwa.txt'
+INTO TABLE panstwa
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(panstwo, kontynent, @var1)
+SET Populacja = replace(@var1, ',', '.');
+
+LOAD DATA LOCAL INFILE
+'C:\\xampp\\htdocs\\5eP\\tizbd\\import\\03_jezyki\\uzytkownicy.txt'
+INTO TABLE uzytkownicy
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(panstwo, jezyk, @var1, urzedowy)
+SET uzytkownicy = replace(@var1, ',', '.');
 
 -- 3. Z bazy Teryt Głównego Urzędu Statystycznego pobierz, a następnie utwórz tabele i zaimportuj z poziomu wiersza poleceń bazy:
 

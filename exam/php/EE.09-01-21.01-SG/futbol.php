@@ -16,6 +16,28 @@
 
     <section id="mecze">
         <!-- Fajny Skrypt1 -->
+        <?php
+            $link = new mysqli('localhost', 'root', '', 'ex_pilkarze');
+
+            $sql = 'SELECT zespol1, zespol2, wynik, data_rozgrywki FROM rozgrywka WHERE zespol1 = "EVG";';
+
+            $result = $link->query($sql);
+
+            while($row = $result->fetch_assoc()){
+                $zespol1=$row['zespol1'];
+                $zespol2=$row['zespol2'];
+                $wynik=$row['wynik'];
+                $data_rozgrywki=$row['data_rozgrywki'];
+                echo"<div class='rozgrywki'>";
+                echo"<h3>$zespol1-$zespol2</h3>";
+                echo"<h4>$wynik</h4>";
+                echo"<p>w dniu: $data_rozgrywki</p>";
+                echo"</div>";
+            }
+
+            $link->close();
+
+        ?>
     </section>
 
     <main>
@@ -32,6 +54,28 @@
             </form>
             <ul>
                 <!-- skrypt2 -->
+                <?php
+                    $link= new mysqli('localhost','root','','ex_pilkarze');
+                
+
+                    if(!empty($_POST['pozycja'])){
+                        $pozycja=$_POST['pozycja'];
+                        $sql="SELECT imie, nazwisko FROM zawodnik WHERE pozycja_id='$pozycja';";
+                
+                        $result=$link->query($sql);
+
+                        while($row=$result->fetch_assoc()){
+                            $imie=$row['imie'];
+                            $nazwisko=$row['nazwisko'];
+                            echo"<li><p>$imie $nazwisko</p></li>";
+                        }
+            
+                        $link->close();
+
+                    }
+                
+                
+                ?>
             </ul>
         </section>
         <section id="prawy">

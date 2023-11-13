@@ -1,0 +1,42 @@
+header{
+    color: white;
+    text-align: center;
+    height: 370px;
+
+}
+#mecze{
+    display: flex;
+    flex-wrap: wrap;
+}
+.rozgrywki{
+    color: white;
+    text-align: center;
+    width: 200px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.rozgrywki:hover{
+    border: 1px white solid;
+}
+main{
+    background-color: whitesmoke;
+    height: 50px;
+}
+footer{
+    display: flex;
+}
+#lewy{
+    background-color: whitesmoke;
+    width: 70%;
+    height: 230px;
+}
+#prawy{
+    background-color: whitesmoke;
+    width: 30%;
+    height: 230px;
+    text-align: right;
+}
+body{
+    
+}

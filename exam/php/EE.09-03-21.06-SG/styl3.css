@@ -1,0 +1,29 @@
+body{
+  font-family: Verdana;  
+}
+
+#left{
+background-color: #29434E;
+color: white;
+text-align: center;
+width: 70%;
+height: 70px;
+}
+
+#right{
+    background-color: #29434E;
+    color: white;
+    text-align: center;
+    width: 30%;
+    height: 70px;
+    }
+    .list-film{
+        background-color: #B0BEC5;
+        height: 320px;
+        overflow: scroll;
+    }
+    footer{
+        background-color:#29434E;
+        color: white;
+    }
+    flex

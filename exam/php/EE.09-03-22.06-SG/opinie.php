@@ -11,7 +11,6 @@
     <header>
         <h1>Hurtownia spożywcza</h1>
     </header>
-
     <main>
         <h2>Opinie naszych klientów</h2>
         <!-- tutaj jest skrypt1 -->
@@ -19,7 +18,17 @@
         $link = new mysqli('localhost', 'root', '', 'ex_hurtownia');
         $sql="SELECT zdjecie,imie,opinia from klienci inner join opinie ON klienci.id=klienci_id where Typy_id in (2,3)";
         $result = $link->query($sql);
-        while($row=$result)
+        while($row=$result->fetch_assoc()){
+            $zdjecie=$row['zdjecie'];
+            $imie=$row['imie'];
+            $opinia=$row['opinia'];
+            echo "<div class='review'>";
+            echo "<img src='$zdjecie' alt='klient'>";
+            echo "<blockquote>$opinia</blockquote>";
+            echo "<h4>$imie</h4>";
+            echo "</div>";
+        }
+        $link->close();
         ?>
     </main>
 

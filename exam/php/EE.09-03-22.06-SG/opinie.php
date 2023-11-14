@@ -15,6 +15,12 @@
     <main>
         <h2>Opinie naszych klientów</h2>
         <!-- tutaj jest skrypt1 -->
+        <?php
+        $link = new mysqli('localhost', 'root', '', 'ex_hurtownia');
+        $sql="SELECT zdjecie,imie,opinia from klienci inner join opinie ON klienci.id=klienci_id where Typy_id in (2,3)";
+        $result = $link->query($sql);
+        while($row=$result)
+        ?>
     </main>
 
     <footer >

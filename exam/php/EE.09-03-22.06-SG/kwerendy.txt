@@ -1,0 +1,11 @@
+1.
+SELECT imie,nazwisko,punkty from klienci order by punkty desc LIMIT 3;
+
+2.
+SELECT nazwa, count(*) from klienci inner join typy on typy.id=klienci.Typy_id group by Typy_id;
+
+3.
+SELECT zdjecie,imie,opinia from klienci inner join opinie ON klienci.id=klienci_id where Typy_id in (2,3);
+
+4.
+ALTER TABLE klienci ADD COLUMN adres varchar(50);

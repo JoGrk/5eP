@@ -2,6 +2,8 @@ body{
   font-family: Verdana;  
 }
 
+
+
 #left{
 background-color: #29434E;
 color: white;
@@ -26,4 +28,25 @@ height: 70px;
         background-color:#29434E;
         color: white;
     }
-    flex
+   
+    .flex{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .block-film{
+        padding: 5px;
+        width: 226px;
+        height: 280px;
+    }
+
+    h3{
+        background-color: #546E7A;
+        color: white;
+        margin: 0px;
+    }
+
+    h4{
+        text-align: center;
+        margin: 0px;
+    }

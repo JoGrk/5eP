@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styl3.css">
+    <link rel="stylesheet" href="style2023.css">
     <title>Video On Demand</title>
 </head>
 <body>
-    <header>
+    <header class="flex">
         <section id='left'>
-            <h1>Internetowa wypozyczalnia filmów</h1>
+            <h1>Internetowa wypozyczalnia filmów </h1>
         </section>
         <section id='right'>
             <table>
@@ -28,9 +28,11 @@
         </section>
     </header>
     <main>
+        
         <section class='list-film'>
             <h3>Polecamy</h3>
             <div class="flex">
+                
                 <!-- skrypt 1 -->
             </div>
         </section>
@@ -40,6 +42,7 @@
                 <!-- skrypt 2 -->
             </div>
         </section>
+        
     </main>
     <footer>
         <form action="video.php" method="POST">

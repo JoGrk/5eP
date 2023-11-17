@@ -37,7 +37,7 @@ CREATE TABLE puchar(
 
 -- 3. Z poziomu wiersza poleceń zaimportuj dane do tabeli puchar
 LOAD DATA LOCAL INFILE
-'C:\\xampp\\htdocs\\5eP\\tizbd\\import\\05_puchar\\puchar.txt'
+'C:/xampp/htdocs/5eP/tizbd/import/05_puchar/puchar.txt'
 INTO TABLE puchar
 FIELDS TERMINATED BY ';'
 LINES TERMINATED BY '\r\n'
@@ -47,18 +47,32 @@ SET wynik_I_serii= REPLACE(@wynik1,',','.'),
 wynik_II_serii=REPLACE(@wynik2,',','.'),
 nota=REPLACE(@n,',','.');
 -- 4.  zaimportuj tabelę zawodnicy z poziomu phpMyAdmin 
+ALTER TABLE zawodnicy_txt
+RENAME TO zawodnicy;
 
+ALTER TABLE zawodnicy
+ADD PRIMARY KEY (id_zawodnika);
 -- 5.  Z poziomu wiersza poleceń wyeksportuj z tabeli zawodnicy nazwisko_i_imie oraz panstwo do pliku zawodnicy.csv, dane oddziel tabulatorem. Na zrzucie pokaż też początek zawartości pliku zwodnicy.csv (otwórz w notatniku lub podobnym programie)
+SELECT nazwisko_i_imie, panstwo FROM zawodnicy
+INTO OUTFILE 
+'C:/xampp/htdocs/5eP/tizbd/import/05_puchar/zawodnicy.csv'
+FIELDS TERMINATED BY '\t'
+LINES TERMINATED BY '\r\n';
 
 -- 6. Wykonaj zrzut bazy danych (gorącą kopię logiczną)  do pliku puchar_imie_nazwisko.sql
+mysqldump -u root 5ep_puchar  > C:/xampp/htdocs/5eP/tizbd/import/05_puchar/5ep_puchar.sql
 
 -- 7. Do pliku zawodnicy.sql wykonaj zrzut tabeli zawodnicy (z poziomu wiersza poleceń)
+mysqldump -u root 5ep_puchar zawodnicy > C:/xampp/htdocs/5eP/tizbd/import/05_puchar/zawodnicy.sql
 
 -- 8. Usuń bazę danych puchar_imie_nazwisko. 
 
+drop database 5ep_puhar
+
 -- 9. Z poziomu wiersza poleceń za pomocą przekierowania odtwórz bazę danych (przekieruj plik z kopią bazy danych)
 
-
+create database 5ep_puchar
+mysql -u root 5ep_puchar < C:/xampp/htdocs/5eP/tizbd/import/05_puchar/5ep_puchar.sql
 
 -- dołącz: zrzuty poleceń (uwierzytelnione), pliki zrzutu bazy danych,zawodnicy.csv i zawodnicy.sql
 

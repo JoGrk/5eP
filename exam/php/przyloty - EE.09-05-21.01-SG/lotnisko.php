@@ -21,7 +21,16 @@
         </section>
     </header>
 
-    <main></main>
+    <main>
+        <table>
+            <tr>
+                <th>czas</th>
+                <th>kierunek</th>
+                <th>numer rejsu</th>
+                <th>status</th>
+            </tr>
+        </table>
+    </main>
 
     <footer>
         <section id="f1">

@@ -1,0 +1,48 @@
+*{
+    font-family: Tahoma;
+}
+#left-header,#right-header{
+    background-color: #003d33;
+    color: white;
+    text-align: center;
+    height: 50px;
+}
+header{
+    display: flex;
+}
+#left-header{
+    width: 70%;
+}
+#right-header{
+    width: 30%;
+}
+#left{
+    background-color: #26a69a;
+    height: 550px;
+    width: 30%;
+}
+#right{
+    background-color: #26a69a;
+    height: 550px;
+    width: 70%;
+}
+footer{
+    background-color: #003d33;
+    color: white;
+}
+#wizytowka{
+    width: 400px;
+    margin: 30px;
+    text-align: center;
+    border: 1px solid #003d33;
+}
+#wizytowka button{
+    background-color: #003d33;
+    color: white;
+    width: 100%;
+    height: 30px;
+    border: none;
+}
+#wizytowka button:hover{
+    background-color: #004c40;
+}

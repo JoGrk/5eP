@@ -46,3 +46,7 @@ footer{
 #wizytowka button:hover{
     background-color: #004c40;
 }
+
+main{
+    display: flex;
+}

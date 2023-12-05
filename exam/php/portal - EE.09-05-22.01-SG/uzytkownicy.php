@@ -14,6 +14,16 @@
         </div>
         <div id='right-header'>
             <!-- skrypt1 -->
+            <?php
+            $link = new mysqli('localhost','root','','ex_portal');
+            $sql="SELECT COUNT(*) FROM dane;";
+            $result=$link ->query($sql);
+            while($tab=$result -> fetch_row()){
+                echo "<h5>Liczba użytkowników portalu $tab[0]</h5>";
+            }
+            $link -> close();
+            ?>
+        
         </div>
     </header>
     <main>
@@ -35,11 +45,50 @@
             <h3>Wizytówka</h3>
             <section>
                 <?php
-                // skrypt 2 
+                if(!empty($_POST['login']) && !empty($_POST['password'])){
+                    $login = $_POST['login'];
+                    $password = $_POST['password'];
+                    $link = new mysqli('localhost','root','','ex_portal');
+                    $sql="SELECT haslo 
+                    FROM uzytkownicy
+                    WHERE login = '$login';";
+                    $result=$link->query($sql);
+                    if($result->num_rows==0){
+                        echo "login nie istnieje";
+                    }
+                    else{
+                        $row = $result ->fetch_assoc();
+                        if(sha1($password)!=$row['haslo']){
+                            echo ' hasło nieprawidłowe';
+                        }
+                        else{
+                            // hasła się zgadzają
+                            $sql="SELECT login, rok_urodz, przyjaciol, hobby,zdjecie 
+                            FROM uzytkownicy
+                            INNER JOIN dane ON dane.id = uzytkownicy.id
+                            WHERE login='$login'";
+                            $result=$link->query($sql);
+                            $row = $result->fetch_assoc();
+                            $wiek = DATE("Y")-$row['rok_urodz'];
+                            $hobby = $row['hobby'];
+                            $zdjecie = $row['zdjecie'];
+                            $przyjaciol = $row['przyjaciol'];
+                            echo "<div id='wizytowka'>";
+                            echo "<img src='$zdjecie' alt='osoba'>";
+                            echo "<h4>$login ($wiek)</h4>";
+                            echo "<p>hobby: $hobby</p>";
+                            echo "<h1><img src='icon-on.png'> $przyjaciol</h1>";
+                            echo "<button><a href='dane.html'>Więcej informacji</a></button>";
+                            echo "</div>";
+
+                        }
+                    }
+                    $link ->close();
+                }
                 ?>
             </section>
 
-
+                
         </div>
     </main>
     <footer>

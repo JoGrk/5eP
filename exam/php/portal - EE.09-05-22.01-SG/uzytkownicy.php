@@ -78,7 +78,7 @@
                             echo "<h4>$login ($wiek)</h4>";
                             echo "<p>hobby: $hobby</p>";
                             echo "<h1><img src='icon-on.png'> $przyjaciol</h1>";
-                            echo "<button><a href='dane.html'>Więcej informacji</a></button>";
+                            echo "<a href='dane.html'><button>Więcej informacji</button></a>";
                             echo "</div>";
 
                         }

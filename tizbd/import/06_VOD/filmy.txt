@@ -1,4 +1,4 @@
-ID_filmu	Tytul	Kraj_produkcji	Gatunek	Cena_w_zl
+ID_filmu    Tytul	Kraj_produkcji	Gatunek	Cena_w_zl
 AA1993	Lista Schindlera	Polska	wojenny	6
 AA1994	Pulp Fiction	USA	thriller	6
 AA1995	Siedem	USA	thriller	8

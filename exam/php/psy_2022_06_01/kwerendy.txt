@@ -1,0 +1,20 @@
+kw1
+ INSERT INTO odpowiedzi (Pytania_id, konta_id, odpowiedz) VALUES (1,5,"Przyda Ci się także wysoki stół, na którym postawisz pieska");
+
+ kw2
+ SELECT nick, (YEAR(CURRENT_DATE)-rejestracja) AS latNaForum
+FROM konta
+WHERE nick IN('Jacek','Tomek','Monika');
+
+kw3
+
+SELECT pytanie, nick, postow FROM konta INNER JOIN pytania ON konta.id = pytania.konta_id
+WHERE pytania.id = 1;
+
+kw4
+
+
+SELECT odpowiedzi.id, odpowiedz, konta.nick
+FROM odpowiedzi
+INNER JOIN konta ON konta.id = odpowiedzi.konta_id
+WHERE odpowiedzi.pytania_id=1;
